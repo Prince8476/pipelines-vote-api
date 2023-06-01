@@ -5,7 +5,9 @@ ADD . /build/
 
 
 RUN mkdir /tmp/cache
-RUN CGO_ENABLED=0 GOCACHE=/tmp/cache go build  -mod=vendor -v -o /tmp/api-server .
+RUN go mod vendor && go mod tidy
+
+RUN CGO_ENABLED=0 go build -o a.out .
 
 FROM scratch
 
