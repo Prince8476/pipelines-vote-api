@@ -5,6 +5,7 @@ ADD . /build/
 
 
 RUN mkdir /tmp/cache && chmod 000 /tmp/cache
+RUN mkdir /tmp/api-server && chmod 000 /tmp/api-server
 
 FROM scratch
 
